@@ -3,59 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashwani AI System</title>
+<title>Ashwani Kumar | AI Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 
-body {
-    margin: 0;
-    background: black;
-    color: #00fff7;
-    font-family: 'Orbitron', sans-serif;
-    overflow: hidden;
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Center Screen */
-.container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* BOOT SCREEN */
+body{
+    background:black;
+    color:#00fff7;
+    font-family:'Orbitron',sans-serif;
+    overflow:hidden;
 }
 
-/* Typing */
-.typing {
-    font-size: 24px;
-    border-right: 2px solid #00fff7;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 3s steps(30) forwards, blink .7s infinite;
+/* CENTER */
+.boot{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-@keyframes typing {
-    to { width: 100%; }
+/* TYPING */
+.typing{
+    border-right:2px solid #00fff7;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    font-size:22px;
+    animation:typing 3s steps(30) forwards, blink .7s infinite;
 }
 
-@keyframes blink {
-    50% { border-color: transparent; }
+.typing:nth-child(2){
+    animation-delay:3s;
 }
 
-/* Button */
-.btn {
-    margin-top: 40px;
-    padding: 12px 30px;
-    border: 1px solid #00fff7;
-    cursor: pointer;
-    transition: 0.3s;
+@keyframes typing{
+    to{width:100%;}
 }
 
-.btn:hover {
-    background: #00fff7;
-    color: black;
+@keyframes blink{
+    50%{border-color:transparent;}
+}
+
+/* BUTTON */
+.btn{
+    margin-top:40px;
+    padding:12px 30px;
+    border:1px solid #00fff7;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#00fff7;
+    color:black;
+}
+
+/* PORTFOLIO STYLE */
+.portfolio{
+    display:none;
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:40px;
+    color:#38bdf8;
+}
+
+section{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    margin:15px 0;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    background:#334155;
 }
 
 </style>
@@ -64,20 +113,56 @@ body {
 
 <body>
 
-<div class="container">
+<!-- BOOT SCREEN -->
+<div class="boot" id="boot">
     <div class="typing">Initializing Ashwani Kumar...</div>
-    <div class="typing" style="animation-delay:3s;">AI Builder | Digital Operator | System Creator</div>
-    <div class="btn" onclick="enter()">ENTER SYSTEM</div>
+    <div class="typing">AI Builder | Digital Operator</div>
+    <div class="btn" onclick="enter()">ENTER</div>
+</div>
+
+<!-- PORTFOLIO -->
+<div class="portfolio" id="portfolio">
+
+<header>
+    <h1>Ashwani Kumar</h1>
+    <p>AI Builder | Digital Marketer | Creator of Nexious AI</p>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+    I build AI tools and digital systems from scratch using ChatGPT, Claude and Gemini. 5 years of experience handling websites, ads and operations.
+    </div>
+</section>
+
+<section>
+    <h2>Projects</h2>
+    <div class="card">🔐 PassChain - Private Password Manager</div>
+    <div class="card">🤖 Nexious AI - AI Business Automation</div>
+</section>
+
+<section>
+    <h2>Skills</h2>
+    <div class="card">WordPress | AI Agents | Meta Ads | Digital Marketing | Team Management</div>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <div class="card">
+    📧 adii.webg@gmail.com <br>
+    📧 ashuadii00@gmail.com <br>
+    🔗 LinkedIn: ashuadii00 <br>
+    💻 GitHub: ashuadii00
+    </div>
+</section>
+
 </div>
 
 <script>
 function enter(){
-    document.body.innerHTML = `
-    <div style="padding:40px;font-family:sans-serif;color:white">
-    <h1>Welcome to my AI Portfolio</h1>
-    <p>This is just the beginning...</p>
-    </div>
-    `;
+    document.getElementById("boot").style.display="none";
+    document.body.style.overflow="auto";
+    document.getElementById("portfolio").style.display="block";
 }
 </script>
 
